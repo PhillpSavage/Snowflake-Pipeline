@@ -60,6 +60,8 @@ def create_pos_view(session):
     # franchise = session.table("RAW_POS.FRANCHISE")
     # location = session.table("RAW_POS.LOCATION")
 
+    # eeeeeeeeeeeeeeee
+
     t_with_f = truck.join(franchise, truck['FRANCHISE_ID'] == franchise['FRANCHISE_ID'], rsuffix='_f')
     oh_w_t_and_l = order_header.join(t_with_f, order_header['TRUCK_ID'] == t_with_f['TRUCK_ID'], rsuffix='_t') \
                                 .join(location, order_header['LOCATION_ID'] == location['LOCATION_ID'], rsuffix='_l')
